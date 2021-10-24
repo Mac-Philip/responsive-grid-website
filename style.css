@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap");
+
+/******************************/
+/* CSS Variables */
+:root {
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #cdcdcd;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #ccc;
+  margin: 30px 50px;
+  line-height: 1.4;
+}
+
+.btn {
+  background: #333;
+  color: #fff;
+  padding: 0.6rem 1.3rem;
+  text-decoration: none;
+  border: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 20px;
+}
+
+/* Navigation */
+.main-nav ul {
+  display: grid;
+  grid-gap: 20px;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.main-nav a {
+  display: block;
+  text-decoration: none;
+  padding: 0.8rem;
+  text-align: center;
+  color: #333;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow);
+}
+
+.main-nav a:hover {
+  box-shadow: 5px 10px #888888;
+}
+
+/* Top Container */
+.hero-section {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    'hero hero card-a'
+    'hero hero card-b';
+}
+
+/* Showcase */
+.hero {
+  grid-area: hero;
+  min-height: 500px;
+  background: url(./arnold-francisca-f77Bh3inUpE-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin-bottom: 0;
+  color: #fff;
+ background:transparent;
+}
+
+.hero h4 {
+  font-size: 1.3rem;
+  margin-top: 0;
+  color: #fff;
+  background:transparent;
+  width: 70%;
+}
+
+/* Top Box */
+.card {
+  background: #d8d5d5;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 1.5rem;
+  box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+.card .price .card-a .card-b, h4{
+    background:transparent;
+}
+
+.card .price {
+  font-size: 2.5rem;
+  background:transparent;
+}
+
+.card-a {
+  grid-area: card-a;
+}
+.btn{
+    padding:10px 25px;
+    cursor: pointer;
+}
+
+.card-b {
+  grid-area: card-b;
+}
+
+/* Boxes */
+.boxes {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.box {
+  text-align: center;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+
+/* Media Queries */
+@media (max-width: 700px) {
+  .hero-section {
+    grid-template-areas:
+      'hero hero'
+      'card-a card-b';
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .main-nav ul {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .hero-section {
+    grid-template-areas:
+      'hero'
+      'card-a'
+      'card-b';
+  }
+}
